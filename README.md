@@ -45,6 +45,12 @@ aka gitflow:deploy --app ccap --branch 'hotfix/some-fix'
 
 ### Commit Use:
 
+Creates branch called `release/foobar` off of commit `{commitSha}` for app `ccap` and deploys to `ccap*qa` & creates PR into `master`
+
+```bash
+aka gitflow:deploy --app ccap --branch 'foobar' --sha {commitSha}
+```
+
 ## Development
 
 - clone
