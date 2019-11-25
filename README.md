@@ -32,7 +32,7 @@ Creates branch called `release/foobar` off of `feature/this` branch for app `cca
 Note: this will not create a PR into `dev`
 
 ```bash
-aka gitflow:deploy --ap ccap --branch foobar --base 'feature/this'
+aka gitflow:deploy --app ccap --branch foobar --base 'feature/this'
 ```
 
 ### Hotfix Use:
