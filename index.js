@@ -1,15 +1,15 @@
-const deployArgs = require('./arguments')
+const deployArgs = require('./src/arguments')
 const {
   getGithubAccessToken,
   setGithubAccessToken,
   timeout
-} = require('./utils')
+} = require('./src/utils')
 const {
   getBranch,
   getBranchToMerge,
   createPullRequest
-} = require('./git-utils')
-const { configureAutoDeploy, removeAutoDeploy } = require('./akkeris-utils')
+} = require('./src/git-utils')
+const { configureAutoDeploy, removeAutoDeploy } = require('./src/akkeris-utils')
 
 const verifyAccessToken = () => Boolean(getGithubAccessToken())
 
