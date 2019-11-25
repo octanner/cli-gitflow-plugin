@@ -17,7 +17,13 @@ async function deploy (akkeris, args) {
   let task = akkeris.terminal.task(`Verifying access token.`)
   task.start()
 
-  if (!verifyAccessToken()) return task.end('error')
+  if (!verifyAccessToken()) {
+    console.log(
+      "Please set your Github access token using 'gitflow:set-token'."
+    )
+    task.end('error')
+    return
+  }
   task.end('ok')
 
   task = akkeris.terminal.task(`Retrieving apps for ${args.app}.`)
