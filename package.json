@@ -1,0 +1,40 @@
+{
+  "name": "cli-gitflow-plugin",
+  "version": "0.0.1",
+  "description": "akkeris cli tool to ease gitflow process",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "format": "prettier-standard '*.js'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "prettier-standard",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octanner/cli-gitflow-plugin.git"
+  },
+  "author": "tyler evans <tyler.evans-ct@octannr.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octanner/cli-gitflow-plugin/issues"
+  },
+  "homepage": "https://github.com/octanner/cli-gitflow-plugin#readme",
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "lint-staged": "^9.4.3",
+    "prettier-standard": "^15.0.1"
+  },
+  "dependencies": {
+    "@octokit/rest": "^16.35.0",
+    "netrc": "^0.1.4"
+  }
+}
