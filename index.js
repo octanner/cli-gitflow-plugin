@@ -103,7 +103,7 @@ async function deploy (akkeris, args) {
   return task.end('ok')
 }
 
-function setToken (args) {
+function setToken (akkeris, args) {
   const task = akkeris.terminal.task(`Setting github access token.`)
   task.start()
   setGithubAccessToken(args.token)
@@ -124,12 +124,10 @@ function init (akkeris) {
     deploy.bind(null, akkeris)
   )
   akkeris.args.command(
-    'gitflow:set-token',
+    'gitflow:set-token TOKEN',
     'This sets the github access token.',
-    {
-      token: deployArgs.token
-    },
-    setToken
+    null,
+    setToken.bind(null, akkeris)
   )
 }
 
