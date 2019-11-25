@@ -18,10 +18,10 @@ async function deploy (akkeris, args) {
   task.start()
 
   if (!verifyAccessToken()) {
+    task.end('error')
     console.log(
       "Please set your Github access token using 'gitflow:set-token'."
     )
-    task.end('error')
     return
   }
   task.end('ok')
