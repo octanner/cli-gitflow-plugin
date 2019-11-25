@@ -3,7 +3,7 @@
 ## Usage
   - install `aka plugins:install gitflow`
   - set github access token `aka gitflow:set-token {token}`
-    - must have repo:write access
+    - must have repo:write access (https://github.com/settings/tokens)
   - deploy `aka gitflow:deploy`
     - use `aka gitflow:deploy --help` for additional info
 
