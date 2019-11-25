@@ -14,7 +14,7 @@
 - deploy `aka gitflow:deploy`
   - use `aka gitflow:deploy --help` for additional info
 
-Note: `ccap*qa` refers to an app called `ccpa` that has a space called `qa` such that the whole app name begins with `ccap` and ends with `qa`.
+Note: `ccap*qa` refers to an app called `ccap` that has a space called `qa` such that the whole app name begins with `ccap` and ends with `qa`.
 
 ### Typical Use:
 
