@@ -24,12 +24,6 @@ module.exports = {
     demand: false,
     description: 'The branch to create the release branch from. (Default: dev])'
   },
-  token: {
-    alias: 't',
-    string: true,
-    demand: true,
-    description: 'Github access token that has repo write access.'
-  },
   repo: {
     alias: 'r',
     string: true,
