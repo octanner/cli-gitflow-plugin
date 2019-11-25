@@ -1,6 +1,6 @@
 {
   "name": "cli-gitflow-plugin",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "akkeris cli tool to ease gitflow process",
   "main": "index.js",
   "scripts": {
