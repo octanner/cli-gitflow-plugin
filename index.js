@@ -110,6 +110,7 @@ function setToken (akkeris, args) {
   task.end('ok')
 }
 
+//foobar
 function init (akkeris) {
   akkeris.args.command(
     'gitflow:deploy',
