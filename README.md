@@ -9,7 +9,7 @@
 
 - install `aka plugins:install gitflow`
 - set github access token `aka gitflow:set-token {token}`
-  - must have repo:write access (https://github.com/settings/tokens)
+  - must have write:packages access (https://github.com/settings/tokens)
   - enable SSO for token
 - deploy `aka gitflow:deploy`
   - use `aka gitflow:deploy --help` for additional info
@@ -32,7 +32,7 @@ Creates branch called `release/foobar` off of `feature/this` branch for app `cca
 Note: this will not create a PR into `dev`
 
 ```bash
-aka gitflow:deploy --ap ccap --branch foobar --base 'feature/this' 
+aka gitflow:deploy --ap ccap --branch foobar --base 'feature/this'
 ```
 
 ### Hotfix Use:
