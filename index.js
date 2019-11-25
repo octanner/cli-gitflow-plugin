@@ -126,7 +126,7 @@ function init (akkeris) {
   akkeris.args.command(
     'gitflow:set-token TOKEN',
     'This sets the github access token.',
-    null,
+    {},
     setToken.bind(null, akkeris)
   )
 }
