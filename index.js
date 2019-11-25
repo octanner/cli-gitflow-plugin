@@ -106,7 +106,7 @@ async function deploy (akkeris, args) {
 function setToken (akkeris, args) {
   const task = akkeris.terminal.task(`Setting github access token.`)
   task.start()
-  setGithubAccessToken(args.token)
+  setGithubAccessToken(args.TOKEN)
   task.end('ok')
 }
 
