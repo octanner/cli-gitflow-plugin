@@ -3,7 +3,7 @@ module.exports = {
     alias: 'a',
     string: true,
     demand: true,
-    description: 'The app to deploy.'
+    description: "The app to deploy. Full name (Example: 'adminui-core-qa')"
   },
   branch: {
     alias: 'b',

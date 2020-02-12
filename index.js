@@ -30,15 +30,14 @@ async function deploy (akkeris, args) {
   task.start()
   // get qa app
   const allApps = await akkeris.api.get('/apps')
-  const apps = allApps.filter(a => a.simple_name === args.app)
-  const qaApp = apps.find(a => a.name.endsWith('qa'))
-  if (!qaApp) return task.end('error')
+  const app = allApps.find(a => a.name === args.app)
+  if (!app) return task.end('error')
   task.end('ok')
 
   task = akkeris.terminal.task(`Retrieving gitUrl.`)
   task.start()
   // pull repo from git url
-  const gitUrl = args.repo || qaApp.git_url
+  const gitUrl = args.repo || app.git_url
   if (!gitUrl) return task.end('error')
   const repo = gitUrl.substring(gitUrl.lastIndexOf('/') + 1)
   task.end('ok')
@@ -76,10 +75,10 @@ async function deploy (akkeris, args) {
   if (!pr) return task.end('error')
   task.end('ok')
 
-  if (qaApp.git_url) {
+  if (app.git_url) {
     task = akkeris.terminal.task(`Removing auto-deploy.`)
     task.start()
-    const removed = removeAutoDeploy(akkeris, qaApp.name)
+    const removed = removeAutoDeploy(akkeris, app.name)
     if (!removed) return task.end('error')
 
     // when removing we need to give it more time so it completes
@@ -91,11 +90,11 @@ async function deploy (akkeris, args) {
     `Setting up auto-deploy for ${mergeBranch.name}.`
   )
   task.start()
-  if (qaApp.git_url) await timeout(4000)
+  if (app.git_url) await timeout(4000)
 
   const configured = configureAutoDeploy(
     akkeris,
-    qaApp.name,
+    app.name,
     gitUrl,
     mergeBranch.name
   )
