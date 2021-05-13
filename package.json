@@ -34,7 +34,7 @@
     "prettier-standard": "^15.0.1"
   },
   "dependencies": {
-    "@octokit/rest": "^16.35.0",
+    "@octokit/rest": "^16.43.2",
     "netrc": "^0.1.4"
   }
 }
